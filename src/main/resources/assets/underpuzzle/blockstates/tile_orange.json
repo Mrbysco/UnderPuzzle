@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "underpuzzle:tile_orange" },
+            { "model": "underpuzzle:tile_orange", "y": 90 },
+            { "model": "underpuzzle:tile_orange", "y": 180 },
+            { "model": "underpuzzle:tile_orange", "y": 270 }
+        ]
+    }
+}

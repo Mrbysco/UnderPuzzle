@@ -1,0 +1,16 @@
+[
+{
+  "modid": "underpuzzle",
+  "name": "Undertale Puzzle Mod",
+  "description": "An attempt on recreating the Undertale puzzles.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Mrbysco"],
+  "credits": "Credits go to Undertale for being an amazing game.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

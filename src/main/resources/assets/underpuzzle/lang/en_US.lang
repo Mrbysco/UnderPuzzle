@@ -1,0 +1,11 @@
+item.tab_icon.name=Determination
+
+tile.tile_blue.name=Blue Tile
+tile.tile_green.name=Green Tile
+tile.tile_orange.name=Orange Tile
+tile.tile_pink.name=Pink Tile
+tile.tile_purple.name=Purple Tile
+tile.tile_red.name=Red Tile
+tile.tile_yellow.name=Yellow Tile
+
+itemGroup.tabUNDERPUZZLE=Undertale Puzzle Mod
