@@ -31,6 +31,6 @@ public class PuzzleItems{
 	
 	public static void registerRender(Item item)
 	{
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(PuzzleReference.MOD_ID + ":" + item.getUnlocalizedName().substring(5).toLowerCase(Locale.US), "inventory"));
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
 }

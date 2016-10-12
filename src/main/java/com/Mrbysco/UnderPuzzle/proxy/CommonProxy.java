@@ -1,15 +1,21 @@
 package com.Mrbysco.UnderPuzzle.proxy;
 
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+
 public class CommonProxy {
-	public void registerRenders(){
+
+	public void init(FMLInitializationEvent e) {
+
+    }
+
+
+	public void Preinit() {
 		
 	}
-	
-	public void registerRenderingFactories(){
-		
-	}
-	
-	public void registerTileEntities(){
+
+
+	public void init() {
+		// TODO Auto-generated method stub
 		
 	}
 }

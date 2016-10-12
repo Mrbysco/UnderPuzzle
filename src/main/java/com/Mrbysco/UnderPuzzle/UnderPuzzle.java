@@ -1,7 +1,5 @@
 package com.Mrbysco.UnderPuzzle;
 
-import org.lwjgl.opengl.Display;
-
 import com.Mrbysco.UnderPuzzle.init.PuzzleBlocks;
 import com.Mrbysco.UnderPuzzle.init.PuzzleItems;
 import com.Mrbysco.UnderPuzzle.proxy.CommonProxy;
@@ -14,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = PuzzleReference.MOD_ID, name = PuzzleReference.MOD_NAME, version = PuzzleReference.VERSION)
+@Mod(modid = PuzzleReference.MOD_ID, name = PuzzleReference.MOD_NAME, version = PuzzleReference.VERSION, acceptedMinecraftVersions = PuzzleReference.ACCEPTED_VERSIONS)
 public class UnderPuzzle	
 {
 	
@@ -28,27 +26,23 @@ public class UnderPuzzle
 	
 	@EventHandler
     public void PreInit(FMLPreInitializationEvent event)
-    {
-    	Display.setTitle("Minecraft 1.10");
-    	
+    {  	
     	PuzzleBlocks.init();
     	PuzzleBlocks.register();
     	PuzzleItems.init();
     	PuzzleItems.register();
 
-    	proxy.registerTileEntities();
-    	proxy.registerRenders();
+    	proxy.Preinit();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-    	
+    	proxy.init();
     }
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
-    	Display.setTitle("Minecraft 1.10");	
     }
 }
