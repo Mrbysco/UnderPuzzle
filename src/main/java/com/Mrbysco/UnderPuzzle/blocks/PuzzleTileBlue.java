@@ -43,24 +43,9 @@ public class PuzzleTileBlue extends Block implements iFlavor{
 		if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow) {
 			System.out.println("Adjecent block is yellow");
 		}
-		
-		if (flavourOrange(true))
-		{
-			System.out.println("protagonist's flavor is Orange.");
-		}
-		
+
 		super.onEntityWalk(worldIn, pos, entityIn);
     }
-
-	@Override
-	public boolean flavourOrange(boolean isOrange) {
-		return isOrange;
-	}
-
-	@Override
-	public boolean flavourLemon(boolean isLemon) {
-		return isLemon;
-	}
 	
 	public void sendTextOrange(World worldIn, BlockPos pos, Entity entityIn)
 	{

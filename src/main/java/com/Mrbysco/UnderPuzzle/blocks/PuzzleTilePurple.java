@@ -35,8 +35,7 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 		cooldown = Math.random();
 		
 		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 100, false);
-		flavourLemon(true);
-		flavourOrange(false);
+
 		if (cooldown < 0.010) 
 		{
 			this.sendText(worldIn, pos, player);
@@ -44,16 +43,6 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
     }
-	
-	@Override
-	public boolean flavourOrange(boolean isOrange) {
-		return isOrange;
-	}
-	
-	@Override
-	public boolean flavourLemon(boolean isLemon) {
-		return isLemon;
-	}
 	
 	public void sendText(World worldIn, BlockPos pos, Entity entityIn)
 	{
