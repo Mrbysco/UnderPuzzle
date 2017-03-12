@@ -4,6 +4,8 @@ import com.Mrbysco.UnderPuzzle.init.PuzzleBlocks;
 import com.Mrbysco.UnderPuzzle.init.PuzzleItems;
 import com.Mrbysco.UnderPuzzle.proxy.CommonProxy;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -22,7 +24,7 @@ public class UnderPuzzle
 	@SidedProxy(clientSide = PuzzleReference.CLIENT_PROXY_CLASS, serverSide = PuzzleReference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
-	public static final UNDERPUZZLEtab tabUNDERPUZZLE = new UNDERPUZZLEtab("tabUNDERPUZZLE");
+	public static CreativeTabs tabUNDERPUZZLE = new CreativeTabs("tabUNDERPUZZLE"){public Item getTabIconItem() {return PuzzleItems.tab_icon;}};
 	
 	@EventHandler
     public void PreInit(FMLPreInitializationEvent event)

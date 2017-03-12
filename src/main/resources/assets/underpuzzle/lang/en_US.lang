@@ -9,3 +9,9 @@ tile.redtile.name=Red Tile
 tile.yellowtile.name=Yellow Tile
 
 itemGroup.tabUNDERPUZZLE=Undertale Puzzle Mod
+
+#Chat Messages
+
+taste.orange1=I suddenly like oranges...
+taste.orange2=I could do with some orange juice
+taste.orange3=Orange you glad I don't like lemon

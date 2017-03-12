@@ -8,7 +8,7 @@ public class PuzzleEntities {
 
 	public static void init()
 	{
-		GameRegistry.registerTileEntity(UnderRedTileEntity.class, "underpuzzle_tile_red");
+		
 	}
 	
 }

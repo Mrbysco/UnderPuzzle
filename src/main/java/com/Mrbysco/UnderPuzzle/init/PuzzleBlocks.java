@@ -1,4 +1,5 @@
 package com.Mrbysco.UnderPuzzle.init;
+import com.Mrbysco.UnderPuzzle.blocks.MobPassibleBlock;
 import com.Mrbysco.UnderPuzzle.blocks.PuzzleTileBlue;
 import com.Mrbysco.UnderPuzzle.blocks.PuzzleTileGreen;
 import com.Mrbysco.UnderPuzzle.blocks.PuzzleTileOrange;
@@ -22,6 +23,7 @@ public static Block tile_pink;
 public static Block tile_purple;
 public static Block tile_red;
 public static Block tile_yellow;
+public static Block player_wall;
 	
 	public static void init()
 	{
@@ -32,6 +34,7 @@ public static Block tile_yellow;
 		tile_purple = new PuzzleTilePurple();
 		tile_red = new PuzzleTileRed();
 		tile_yellow = new PuzzleTileYellow();
+		player_wall = new MobPassibleBlock();
 
 	}
 	
@@ -44,6 +47,7 @@ public static Block tile_yellow;
 		registerBlock(tile_purple);
 		registerBlock(tile_red);
 		registerBlock(tile_yellow);
+		registerBlock(player_wall);
 
 	}
 	
@@ -68,6 +72,7 @@ public static Block tile_yellow;
 		registerRender(tile_purple);
 		registerRender(tile_red);
 		registerRender(tile_yellow);
+		registerRender(player_wall);
 
 	}
 	
@@ -75,6 +80,5 @@ public static Block tile_yellow;
 	{
 		Item item = Item.getItemFromBlock(block);
 		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(RDTReference.MOD_ID + ":" + block.getUnlocalizedName().substring(5).toLowerCase(Locale.US), "inventory"));
 	}
 }
