@@ -2,6 +2,7 @@ package com.Mrbysco.UnderPuzzle.blocks;
 
 import com.Mrbysco.UnderPuzzle.PuzzleReference;
 import com.Mrbysco.UnderPuzzle.UnderPuzzle;
+import com.Mrbysco.UnderPuzzle.iFlavor;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -14,7 +15,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class PuzzleTileOrange extends Block{
+public class PuzzleTileOrange extends Block implements iFlavor{
 
 	public static double cooldown;
 	
@@ -33,11 +34,25 @@ public class PuzzleTileOrange extends Block{
 		cooldown = Math.random();
 		
 		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 100, false);
-		
-		if (cooldown < 0.008) this.sendText(worldIn, pos, player);
+		flavourOrange(true);
+		flavourLemon(false);
+		if (cooldown < 0.010) 
+		{
+			this.sendText(worldIn, pos, player);
+		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
     }
+	
+	@Override
+	public boolean flavourOrange(boolean isOrange) {
+		return isOrange;
+	}
+	
+	@Override
+	public boolean flavourLemon(boolean isLemon) {
+		return isLemon;
+	}
 	
 	public void sendText(World worldIn, BlockPos pos, Entity entityIn)
 	{
