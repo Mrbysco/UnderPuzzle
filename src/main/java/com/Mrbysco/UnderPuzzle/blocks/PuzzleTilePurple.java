@@ -44,29 +44,148 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			int BlockX = pos.getX();
 			int BlockZ = pos.getZ();
 			
-			if(PreviousX == BlockX -1 || PreviousX == BlockX -2 || PreviousX == BlockX -3)
+			if(PreviousX == BlockX -1)
 			{
 				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
 			}
 			
-			if(PreviousX == BlockX +1 || PreviousX == BlockX +2 || PreviousX == BlockX +3)
+			if(PreviousX == BlockX +1)
 			{
 				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
 			}
 			
-			if(PreviousZ == BlockZ -1 || PreviousZ == BlockZ -2 || PreviousZ == BlockZ -3)
+			if(PreviousZ == BlockZ -1)
 			{
 				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
 			}
 			
-			if(PreviousZ == BlockZ +1 || PreviousZ == BlockZ +2 || PreviousZ == BlockZ +3)
+			if(PreviousZ == BlockZ +1)
 			{
 				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
 			}
 			
-			if (cooldown < 0.010) 
+			if(PreviousX == BlockX -2)
 			{
-				this.sendText(worldIn, pos, player);
+				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousX == BlockX +2)
+			{
+				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousZ == BlockZ -2)
+			{
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousZ == BlockZ +2)
+			{
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);		
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousX == BlockX -3)
+			{
+				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousX == BlockX +3)
+			{
+				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousZ == BlockZ -3)
+			{
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
+			}
+			
+			if(PreviousZ == BlockZ +3)
+			{
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
+				player.getEntityData().setBoolean("likesOrange", false);
+				player.getEntityData().setBoolean("likesLemon", true);
+				
+				if (cooldown < 0.010) 
+				{
+					this.sendText(worldIn, pos, player);
+				}
 			}
 		}
 		

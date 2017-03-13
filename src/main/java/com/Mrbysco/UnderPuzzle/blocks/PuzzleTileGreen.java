@@ -41,6 +41,7 @@ public class PuzzleTileGreen extends Block{
 			
 			if(PreviousX == BlockX -1)
 			{
+				/*
 				if (cooldown < 0.01) 
 				{
 					EntityZombie zombie = new EntityZombie(worldIn); 
@@ -48,6 +49,7 @@ public class PuzzleTileGreen extends Block{
 					zombie.setLocationAndAngles(BlockX +2.5D, PreviousY, BlockZ +0.5D, 0,0); 
 					zombie.isChild();
 				}
+				*/
 				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
 				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
 				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
@@ -55,6 +57,7 @@ public class PuzzleTileGreen extends Block{
 			
 			if(PreviousX == BlockX +1)
 			{
+				/*
 				if (cooldown < 0.01) 
 				{
 					EntityZombie zombie = new EntityZombie(worldIn); 
@@ -62,6 +65,7 @@ public class PuzzleTileGreen extends Block{
 					zombie.setLocationAndAngles(BlockX -1.5D, PreviousY, BlockZ +0.5D -1.5D, 0,0); 
 					zombie.isChild();
 				}
+				*/
 				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
 				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
 				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
@@ -69,6 +73,7 @@ public class PuzzleTileGreen extends Block{
 			
 			if(PreviousZ == BlockZ -1)
 			{
+				/*
 				if (cooldown < 0.01) 
 				{
 					EntityZombie zombie = new EntityZombie(worldIn); 
@@ -76,7 +81,7 @@ public class PuzzleTileGreen extends Block{
 					zombie.setLocationAndAngles(BlockX +0.5D, PreviousY, BlockZ +2.5D, 0,0); 
 					zombie.isChild();
 				}
-				
+				*/
 				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
 				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
 				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
@@ -84,6 +89,7 @@ public class PuzzleTileGreen extends Block{
 			
 			if(PreviousZ == BlockZ +1)
 			{
+				/*
 				if (cooldown < 0.01) 
 				{
 					EntityZombie zombie = new EntityZombie(worldIn); 
@@ -91,6 +97,7 @@ public class PuzzleTileGreen extends Block{
 					zombie.setLocationAndAngles(BlockX +0.5D, PreviousY, BlockZ -1.5D, 0,0); 
 					zombie.isChild();
 				}
+				*/
 				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
 				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
 				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
