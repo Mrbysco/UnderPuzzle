@@ -33,15 +33,67 @@ public class PuzzleTileGreen extends Block{
 		{
 			cooldown = Math.random();
 			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-			player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
-			player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
-			player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+			int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
+			int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
+			int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+			int BlockX = pos.getX();
+			int BlockZ = pos.getZ();
 			
-			if (cooldown < 0.010) 
+			if(PreviousX == BlockX -1)
 			{
-				EntityZombie zombie = new EntityZombie(worldIn); 
-				worldIn.spawnEntityInWorld(zombie);
-				zombie.isChild();
+				if (cooldown < 0.01) 
+				{
+					EntityZombie zombie = new EntityZombie(worldIn); 
+					worldIn.spawnEntityInWorld(zombie);
+					zombie.setLocationAndAngles(BlockX +2.5D, PreviousY, BlockZ +0.5D, 0,0); 
+					zombie.isChild();
+				}
+				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+			}
+			
+			if(PreviousX == BlockX +1)
+			{
+				if (cooldown < 0.01) 
+				{
+					EntityZombie zombie = new EntityZombie(worldIn); 
+					worldIn.spawnEntityInWorld(zombie);
+					zombie.setLocationAndAngles(BlockX -1.5D, PreviousY, BlockZ +0.5D -1.5D, 0,0); 
+					zombie.isChild();
+				}
+				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+			}
+			
+			if(PreviousZ == BlockZ -1)
+			{
+				if (cooldown < 0.01) 
+				{
+					EntityZombie zombie = new EntityZombie(worldIn); 
+					worldIn.spawnEntityInWorld(zombie);
+					zombie.setLocationAndAngles(BlockX +0.5D, PreviousY, BlockZ +2.5D, 0,0); 
+					zombie.isChild();
+				}
+				
+				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+			}
+			
+			if(PreviousZ == BlockZ +1)
+			{
+				if (cooldown < 0.01) 
+				{
+					EntityZombie zombie = new EntityZombie(worldIn); 
+					worldIn.spawnEntityInWorld(zombie);
+					zombie.setLocationAndAngles(BlockX +0.5D, PreviousY, BlockZ -1.5D, 0,0); 
+					zombie.isChild();
+				}
+				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
 			}
 		}
 		

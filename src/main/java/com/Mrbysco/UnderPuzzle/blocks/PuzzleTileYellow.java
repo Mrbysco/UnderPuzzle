@@ -32,9 +32,28 @@ public class PuzzleTileYellow extends Block{
 			int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
 			int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
 			int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+			int BlockX = pos.getX();
+			int BlockZ = pos.getZ();
 			
-			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
-			System.out.println("x:" + PreviousX + " y:" + PreviousY + " z:" + PreviousZ);
+			if(PreviousX == BlockX -1)
+			{
+				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
+			}
+			
+			if(PreviousX == BlockX +1)
+			{
+				player.attemptTeleport(BlockX +1D, PreviousY, BlockZ +0.5D);
+			}
+			
+			if(PreviousZ == BlockZ -1)
+			{
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
+			}
+			
+			if(PreviousZ == BlockZ +1)
+			{
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1D);
+			}
 		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
