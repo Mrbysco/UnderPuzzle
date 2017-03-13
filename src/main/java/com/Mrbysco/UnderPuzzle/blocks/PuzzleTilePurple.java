@@ -32,21 +32,22 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
     {
-		cooldown = Math.random();
-		
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-		player.getEntityData().setBoolean("likesOrange", false);
-		player.getEntityData().setBoolean("likesLemon", true);
-		int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
-		int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
-		int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
-		
-		if (cooldown < 0.010) 
+		if (entityIn instanceof EntityPlayer)
 		{
-			this.sendText(worldIn, pos, player);
+			cooldown = Math.random();
+			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+			player.getEntityData().setBoolean("likesOrange", false);
+			player.getEntityData().setBoolean("likesLemon", true);
+			int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
+			int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
+			int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+			
+			if (cooldown < 0.010) 
+			{
+				this.sendText(worldIn, pos, player);
+			}
 		}
-		
-		player.attemptTeleport(PreviousX +1.5D, PreviousY, PreviousZ +1.5D);
+		//Nothing
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
     }

@@ -11,9 +11,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 public class PuzzleTileBlue extends Block implements iFlavor{
@@ -33,62 +30,32 @@ public class PuzzleTileBlue extends Block implements iFlavor{
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
     {
-		cooldown = Math.random();
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-		Block blockN = worldIn.getBlockState(pos.north()).getBlock();
-		Block blockE = worldIn.getBlockState(pos.east()).getBlock();
-		Block blockS = worldIn.getBlockState(pos.south()).getBlock();
-		Block blockW = worldIn.getBlockState(pos.west()).getBlock();
-		
-		int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
-		int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
-		int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
-		
-		if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow || player.getEntityData().getBoolean("likesOrange") == true) 
+		if (entityIn instanceof EntityPlayer)
 		{
-			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
+			cooldown = Math.random();
+			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+			Block blockN = worldIn.getBlockState(pos.north()).getBlock();
+			Block blockE = worldIn.getBlockState(pos.east()).getBlock();
+			Block blockS = worldIn.getBlockState(pos.south()).getBlock();
+			Block blockW = worldIn.getBlockState(pos.west()).getBlock();
+			
+			int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
+			int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
+			int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+			
+			if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow || player.getEntityData().getBoolean("likesOrange") == true) 
+			{
+				player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
+			}
+			
+			if (blockN != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockE != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockS != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockW != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true)
+			{
+				player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+				player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+				player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+			}
 		}
-		
-		if (blockN != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockE != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockS != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockW != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true)
-		{
-			player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
-			player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
-			player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
-		}
-
 		super.onEntityWalk(worldIn, pos, entityIn);
     }
-	
-	public void sendTextOrange(World worldIn, BlockPos pos, Entity entityIn)
-	{
-		if (RANDOM.nextInt(100) <30) 
-		{ 
-		entityIn.addChatMessage(new TextComponentTranslation("taste.orange1").setStyle(new Style().setColor(TextFormatting.GOLD)));
-		}
-		else if (RANDOM.nextInt(100) <60) 
-		{ 
-		entityIn.addChatMessage(new TextComponentTranslation("taste.orange2").setStyle(new Style().setColor(TextFormatting.GOLD)));
-		}
-		else
-		{ 
-		entityIn.addChatMessage(new TextComponentTranslation("taste.orange3").setStyle(new Style().setColor(TextFormatting.GOLD)));
-		}
-	}
-	
-	public void sendTextLemon(World worldIn, BlockPos pos, Entity entityIn)
-	{
-		if (RANDOM.nextInt(100) <30) 
-		{ 
-		entityIn.addChatMessage(new TextComponentTranslation("taste.lemon1").setStyle(new Style().setColor(TextFormatting.GOLD)));
-		}
-		else if (RANDOM.nextInt(100) <60) 
-		{ 
-		entityIn.addChatMessage(new TextComponentTranslation("taste.lemon2").setStyle(new Style().setColor(TextFormatting.GOLD)));
-		}
-		else
-		{ 
-		entityIn.addChatMessage(new TextComponentTranslation("taste.lemon3").setStyle(new Style().setColor(TextFormatting.GOLD)));
-		}
-	}
 	
 }

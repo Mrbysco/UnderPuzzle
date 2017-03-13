@@ -7,11 +7,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class PuzzleTileGreen extends Block{
+	
+	public static double cooldown;
 
 	public PuzzleTileGreen() {
 		super(Material.CLOTH);
@@ -26,10 +29,21 @@ public class PuzzleTileGreen extends Block{
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-		player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
-		player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
-		player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+		if (entityIn instanceof EntityPlayer)
+		{
+			cooldown = Math.random();
+			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+			player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+			player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+			player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+			
+			if (cooldown < 0.010) 
+			{
+				EntityZombie zombie = new EntityZombie(worldIn); 
+				worldIn.spawnEntityInWorld(zombie);
+				zombie.isChild();
+			}
+		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}

@@ -31,18 +31,20 @@ public class PuzzleTileOrange extends Block implements iFlavor{
 	
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
     {
-		cooldown = Math.random();
-		
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-		player.getEntityData().setBoolean("likesOrange", true);
-		player.getEntityData().setBoolean("likesLemon", false);
-		player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
-		player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
-		player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
-
-		if (cooldown < 0.010) 
+		if (entityIn instanceof EntityPlayer)
 		{
-			this.sendText(worldIn, pos, player);
+			cooldown = Math.random();
+			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+			player.getEntityData().setBoolean("likesOrange", true);
+			player.getEntityData().setBoolean("likesLemon", false);
+			player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+			player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+			player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+	
+			if (cooldown < 0.010) 
+			{
+				this.sendText(worldIn, pos, player);
+			}
 		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);

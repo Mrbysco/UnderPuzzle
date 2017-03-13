@@ -26,10 +26,13 @@ public class PuzzleTilePink extends Block{
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-		player.getEntityData().setInteger("PreviousPosX",(int) player.posX);
-		player.getEntityData().setInteger("PreviousPosY",(int) player.posY);
-		player.getEntityData().setInteger("PreviousPosZ",(int) player.posZ);
+		if (entityIn instanceof EntityPlayer)
+		{
+			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+			player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+			player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+			player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
+		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}

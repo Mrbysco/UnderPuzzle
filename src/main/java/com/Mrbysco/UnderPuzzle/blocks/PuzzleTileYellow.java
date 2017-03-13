@@ -26,14 +26,16 @@ public class PuzzleTileYellow extends Block{
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
-		int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
-		int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
-		int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
-		
-		player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
-		System.out.println("x:" + PreviousX + " y:" + PreviousY + " z:" + PreviousZ);
-
+		if (entityIn instanceof EntityPlayer)
+		{
+			EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+			int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
+			int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
+			int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+			
+			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
+			System.out.println("x:" + PreviousX + " y:" + PreviousY + " z:" + PreviousZ);
+		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}
