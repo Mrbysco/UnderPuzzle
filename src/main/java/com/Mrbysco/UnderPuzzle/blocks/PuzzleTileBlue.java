@@ -42,10 +42,30 @@ public class PuzzleTileBlue extends Block implements iFlavor{
 			int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
 			int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
 			int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+			int BlockX = pos.getX();
+			int BlockZ = pos.getZ();
 			
 			if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow || player.getEntityData().getBoolean("likesOrange") == true) 
 			{
-				player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
+				if(PreviousX == BlockX -1)
+				{
+					player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
+				}
+				
+				if(PreviousX == BlockX +1)
+				{
+					player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
+				}
+				
+				if(PreviousZ == BlockZ -1)
+				{
+					player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
+				}
+				
+				if(PreviousZ == BlockZ +1)
+				{
+					player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
+				}
 			}
 			
 			if (blockN != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockE != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockS != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockW != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true)

@@ -42,7 +42,7 @@ public class PuzzleTileYellow extends Block{
 			
 			if(PreviousX == BlockX +1)
 			{
-				player.attemptTeleport(BlockX +1D, PreviousY, BlockZ +0.5D);
+				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
 			}
 			
 			if(PreviousZ == BlockZ -1)
@@ -52,7 +52,7 @@ public class PuzzleTileYellow extends Block{
 			
 			if(PreviousZ == BlockZ +1)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1D);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 			}
 		}
 		

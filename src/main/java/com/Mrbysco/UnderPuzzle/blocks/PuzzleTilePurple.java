@@ -44,28 +44,24 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			int BlockX = pos.getX();
 			int BlockZ = pos.getZ();
 			
-			if(PreviousX == BlockX -1)
+			if(PreviousX == BlockX -1 || PreviousX == BlockX -2 || PreviousX == BlockX -3)
 			{
 				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
-				//player.attemptTeleport(PreviousX +2.5D, PreviousY, PreviousZ +0.5D);
 			}
 			
-			if(PreviousX == BlockX +1)
+			if(PreviousX == BlockX +1 || PreviousX == BlockX +2 || PreviousX == BlockX +3)
 			{
 				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
-				//player.attemptTeleport(PreviousX -1.5D, PreviousY, PreviousZ +0.5D);
 			}
 			
-			if(PreviousZ == BlockZ -1)
+			if(PreviousZ == BlockZ -1 || PreviousZ == BlockZ -2 || PreviousZ == BlockZ -3)
 			{
 				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
-				//player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +2.5D);
 			}
 			
-			if(PreviousZ == BlockZ +1)
+			if(PreviousZ == BlockZ +1 || PreviousZ == BlockZ +2 || PreviousZ == BlockZ +3)
 			{
 				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
-				//player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ -1.5D);
 			}
 			
 			if (cooldown < 0.010) 
