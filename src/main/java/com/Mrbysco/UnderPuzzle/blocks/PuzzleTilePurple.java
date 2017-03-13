@@ -46,11 +46,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousX == BlockX -1)
 			{
-				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -58,11 +58,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousX == BlockX +1)
 			{
-				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -70,11 +70,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousZ == BlockZ -1)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -82,11 +82,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousZ == BlockZ +1)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -94,11 +94,12 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousX == BlockX -2)
 			{
-				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
+
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -106,11 +107,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousX == BlockX +2)
 			{
-				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -118,11 +119,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousZ == BlockZ -2)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -130,11 +131,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousZ == BlockZ +2)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);		
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);		
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -142,11 +143,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousX == BlockX -3)
 			{
-				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +1.5D, PreviousY, BlockZ +0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -154,11 +155,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousX == BlockX +3)
 			{
-				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX -0.5D, PreviousY, BlockZ +0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -166,11 +167,11 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousZ == BlockZ -3)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ +1.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
@@ -178,15 +179,17 @@ public class PuzzleTilePurple extends Block implements iFlavor{
 			
 			if(PreviousZ == BlockZ +3)
 			{
-				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
 				player.getEntityData().setBoolean("likesOrange", false);
 				player.getEntityData().setBoolean("likesLemon", true);
+				player.attemptTeleport(BlockX +0.5D, PreviousY, BlockZ -0.5D);
 				
-				if (cooldown < 0.010) 
+				if (cooldown < 0.1) 
 				{
 					this.sendText(worldIn, pos, player);
 				}
 			}
+			player.getEntityData().setBoolean("likesOrange", false);
+			player.getEntityData().setBoolean("likesLemon", true);
 		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
