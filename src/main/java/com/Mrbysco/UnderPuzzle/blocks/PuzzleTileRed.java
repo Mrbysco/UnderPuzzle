@@ -31,6 +31,7 @@ public class PuzzleTileRed extends Block{
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,
 			ItemStack stack) {
     	{
+    		worldIn.setBlockState(pos.up(), PuzzleBlocks.player_wall.getDefaultState());
     		worldIn.setBlockState(pos.up(2), PuzzleBlocks.player_wall.getDefaultState());
     	}
     	super.onBlockPlacedBy(worldIn, pos, state, placer, stack);

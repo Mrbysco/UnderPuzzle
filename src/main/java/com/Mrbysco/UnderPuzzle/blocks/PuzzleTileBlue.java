@@ -34,14 +34,31 @@ public class PuzzleTileBlue extends Block implements iFlavor{
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
     {
 		cooldown = Math.random();
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 100, false);
+		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
 		Block blockN = worldIn.getBlockState(pos.north()).getBlock();
 		Block blockE = worldIn.getBlockState(pos.east()).getBlock();
 		Block blockS = worldIn.getBlockState(pos.south()).getBlock();
 		Block blockW = worldIn.getBlockState(pos.west()).getBlock();
 		
-		if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow) {
-			System.out.println("Adjecent block is yellow");
+		int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
+		int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
+		int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+		
+		if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow) 
+		{
+			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
+		}
+		
+		if (player.getEntityData().getBoolean("likesOrange") == true)
+		{
+			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
+		}
+		
+		if (blockN != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockE != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockS != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true || blockW != PuzzleBlocks.tile_yellow && player.getEntityData().getBoolean("likesOrange") != true)
+		{
+			player.getEntityData().setInteger("PreviousPuzzlePosX",(int) player.posX);
+			player.getEntityData().setInteger("PreviousPuzzlePosY",(int) player.posY);
+			player.getEntityData().setInteger("PreviousPuzzlePosZ",(int) player.posZ);
 		}
 
 		super.onEntityWalk(worldIn, pos, entityIn);

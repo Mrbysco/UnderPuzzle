@@ -34,12 +34,19 @@ public class PuzzleTilePurple extends Block implements iFlavor{
     {
 		cooldown = Math.random();
 		
-		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 100, false);
-
+		EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false);
+		player.getEntityData().setBoolean("likesOrange", false);
+		player.getEntityData().setBoolean("likesLemon", true);
+		int PreviousX = player.getEntityData().getInteger("PreviousPuzzlePosX");
+		int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
+		int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
+		
 		if (cooldown < 0.010) 
 		{
 			this.sendText(worldIn, pos, player);
 		}
+		
+		player.attemptTeleport(PreviousX +1.5D, PreviousY, PreviousZ +1.5D);
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
     }
