@@ -44,12 +44,7 @@ public class PuzzleTileBlue extends Block implements iFlavor{
 		int PreviousY = player.getEntityData().getInteger("PreviousPuzzlePosY");
 		int PreviousZ = player.getEntityData().getInteger("PreviousPuzzlePosZ");
 		
-		if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow) 
-		{
-			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
-		}
-		
-		if (player.getEntityData().getBoolean("likesOrange") == true)
+		if (blockN == PuzzleBlocks.tile_yellow || blockE == PuzzleBlocks.tile_yellow || blockS == PuzzleBlocks.tile_yellow || blockW == PuzzleBlocks.tile_yellow || player.getEntityData().getBoolean("likesOrange") == true) 
 		{
 			player.attemptTeleport(PreviousX +0.5D, PreviousY, PreviousZ +0.5D);
 		}
